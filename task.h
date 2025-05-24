@@ -1,5 +1,8 @@
 // this is the header file for the task
-struct Task {
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+struct task {
   int id;
   char description[256];
   Status status;
@@ -17,6 +20,10 @@ typedef enum {
 } Status;
 
 struct node {
-  int data;
+  struct task *data;
   struct node *next;
 };
+
+// these are global variables
+struct node *head = NULL;
+int currentId = 1;
